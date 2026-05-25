@@ -1,6 +1,6 @@
 # Portfolio de Mini Herramientas Web Estáticas
 
-Este repositorio contiene un portfolio interactivo de mini herramientas web estáticas y ligeras desarrolladas con tecnologías nativas del lado del cliente. El proyecto está diseñado bajo una arquitectura modular y limpia, optimizada para un alto rendimiento y es totalmente publicable en **GitHub Pages**.
+Este repositorio contiene un portfolio interactivo de mini herramientas web estáticas y ligeras desarrolladas con tecnologías nativas del lado del cliente. El proyecto está diseñado bajo una arquitectura modular y limpia, optimizada para un alto rendimiento y es totalmente publicable en **GitHub Pages**. (**[Ver proyecto en GitHub Pages](https://rafitafr.github.io/mini-tools-portfolio/)**)
 
 ---
 
