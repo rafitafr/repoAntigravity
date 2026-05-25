@@ -1,0 +1,62 @@
+{
+    "projects": [
+        {
+            "id": "json-beautifier",
+            "title": "JSON Beautifier",
+            "description": "Herramienta para formatear, validar y minificar JSON.",
+            "category": "Herramientas de desarrollo",
+            "path": "projects/json-beautifier/",
+            "liveUrl": "projects/json-beautifier/",
+            "status": "done",
+            "tags": [
+                "json",
+                "formatter",
+                "developer-tool"
+            ]
+        },
+        {
+            "id": "base-converter",
+            "title": "Calculadora decimal/binario/hexadecimal/octal",
+            "description": "Conversor entre sistemas numéricos decimal, binario, hexadecimal y octal.",
+            "category": "Conversores",
+            "path": "projects/base-converter/",
+            "liveUrl": "projects/base-converter/",
+            "status": "done",
+            "tags": [
+                "decimal",
+                "binary",
+                "hexadecimal",
+                "octal"
+            ]
+        },
+        {
+            "id": "resistor-color-calculator",
+            "title": "Calculadora de colores de resistencias",
+            "description": "Calculadora para obtener el valor de una resistencia a partir de sus bandas de colores.",
+            "category": "Electrónica",
+            "path": "projects/resistor-color-calculator/",
+            "liveUrl": "projects/resistor-color-calculator/",
+            "status": "done",
+            "tags": [
+                "resistors",
+                "electronics",
+                "calculator"
+            ]
+        },
+        {
+            "id": "csv-json-converter",
+            "title": "CSV JSON Converter",
+            "description": "Herramienta bidireccional para convertir y estructurar datos entre formatos CSV y JSON de forma local.",
+            "category": "Herramientas de desarrollo",
+            "path": "projects/csv-json-converter/",
+            "liveUrl": "projects/csv-json-converter/",
+            "status": "done",
+            "tags": [
+                "csv",
+                "json",
+                "converter",
+                "developer-tool"
+            ]
+        }
+    ]
+}

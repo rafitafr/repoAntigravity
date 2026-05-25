@@ -1,0 +1,241 @@
+/* 
+   ==========================================================================
+   CSV JSON CONVERTER - ESTILOS CSS PERSONALIZADOS (TEMA OSCURO PREMIUM)
+   ==========================================================================
+   Creado para proporcionar una interfaz premium, moderna e interactiva para la
+   conversión bidireccional de datos entre formatos CSV y JSON.
+*/
+
+/* Importación de fuentes tipográficas desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap');
+
+:root {
+    --bg-dark: #0b0f19;
+    --bg-card: rgba(22, 28, 45, 0.4);
+    --border-color: rgba(255, 255, 255, 0.08);
+    --text-primary: #f3f4f6;
+    --text-secondary: #9ca3af;
+    --primary-gradient: linear-gradient(135deg, #6366f1, #06b6d4);
+    --accent-color: #6366f1;
+    --shadow-color: rgba(99, 102, 241, 0.15);
+    
+    /* Estados de validación */
+    --color-error: #f87171;
+    --bg-error-alpha: rgba(248, 113, 113, 0.1);
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Luces radiales decorativas de fondo */
+body::before {
+    content: '';
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    width: 40%;
+    height: 40%;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.08) 0%, transparent 70%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Enlace de regreso al portafolio */
+.back-link {
+    color: var(--text-secondary);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+    transition: color 0.2s ease, transform 0.2s ease;
+    margin-bottom: 2rem;
+}
+
+.back-link:hover {
+    color: #06b6d4;
+    transform: translateX(-4px);
+}
+
+/* Contenedor Principal (Glassmorphism) */
+.tool-container {
+    background: var(--bg-card);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    padding: 2.25rem;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+/* Selectores y Botones del Panel de Control */
+.select-custom {
+    background-color: rgba(15, 23, 42, 0.6) !important;
+    border: 1px solid var(--border-color) !important;
+    color: var(--text-primary) !important;
+    border-radius: 12px;
+    padding: 0.65rem 1rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.select-custom:focus {
+    border-color: var(--accent-color) !important;
+    box-shadow: 0 0 0 3px var(--shadow-color) !important;
+    outline: none;
+}
+
+/* Casillas Checkbox Personalizadas */
+.form-check-input {
+    background-color: rgba(15, 23, 42, 0.6) !important;
+    border: 1px solid var(--border-color) !important;
+    transition: all 0.2s ease;
+}
+
+.form-check-input:checked {
+    background: var(--primary-gradient) !important;
+    border-color: transparent !important;
+    box-shadow: 0 0 8px var(--shadow-color) !important;
+}
+
+.form-check-label {
+    color: var(--text-secondary);
+    font-weight: 500;
+    font-size: 0.95rem;
+    cursor: pointer;
+}
+
+/* Áreas de Texto (Textareas) */
+.json-textarea {
+    font-family: 'Fira Code', monospace;
+    background-color: rgba(15, 23, 42, 0.6) !important;
+    border: 1px solid var(--border-color) !important;
+    color: #e5e7eb !important;
+    border-radius: 16px;
+    padding: 1.25rem;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    resize: none;
+    transition: all 0.3s ease;
+}
+
+.json-textarea:focus {
+    border-color: var(--accent-color) !important;
+    box-shadow: 0 0 0 3px var(--shadow-color) !important;
+    outline: none;
+}
+
+.json-textarea::placeholder {
+    color: #4b5563;
+}
+
+/* Botones de Control */
+.control-btn {
+    border-radius: 12px;
+    padding: 0.65rem 1.25rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-primary-gradient {
+    background: var(--primary-gradient);
+    color: #ffffff;
+    border: none;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+}
+
+.btn-primary-gradient:hover {
+    background: linear-gradient(135deg, #4f46e5, #0891b2);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(99, 102, 241, 0.3);
+}
+
+.btn-outline-custom {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+}
+
+.btn-outline-custom:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-primary);
+    border-color: var(--text-secondary);
+    transform: translateY(-2px);
+}
+
+.btn-outline-custom.copied {
+    background-color: rgba(52, 211, 153, 0.15) !important;
+    color: #34d399 !important;
+    border-color: rgba(52, 211, 153, 0.3) !important;
+}
+
+/* Alertas de Validación */
+.error-alert {
+    background-color: var(--bg-error-alpha);
+    color: var(--color-error);
+    border: 1px solid rgba(248, 113, 113, 0.2);
+    border-radius: 14px;
+    padding: 1rem 1.25rem;
+    font-size: 0.9rem;
+    display: none;
+    align-items: center;
+    gap: 0.75rem;
+    animation: slideDown 0.3s ease forwards;
+}
+
+/* Tarjetas Informativas Educativas */
+.info-section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.info-section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: var(--primary-gradient);
+    border-radius: 3px;
+}
+
+.info-card {
+    background: rgba(22, 28, 45, 0.25);
+    border: 1px solid var(--border-color);
+    border-radius: 18px;
+    padding: 1.5rem;
+}
+
+/* Animaciones */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .json-textarea {
+        height: 300px !important;
+    }
+}

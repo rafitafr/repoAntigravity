@@ -1,0 +1,211 @@
+/* 
+   ==========================================================================
+   JSON BEAUTIFIER - ESTILOS PERSONALIZADOS (MODO OSCURO PREMIUM)
+   ==========================================================================
+   Creado para proporcionar una interfaz premium, moderna y limpia para el formateo de JSON.
+*/
+
+/* Importación de tipografía de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap');
+
+:root {
+    --bg-dark: #0b0f19;
+    --bg-card: rgba(22, 28, 45, 0.4);
+    --border-color: rgba(255, 255, 255, 0.08);
+    --text-primary: #f3f4f6;
+    --text-secondary: #9ca3af;
+    --primary-gradient: linear-gradient(135deg, #6366f1, #06b6d4);
+    --accent-color: #6366f1;
+    --shadow-color: rgba(99, 102, 241, 0.15);
+    
+    /* Estados de validación */
+    --color-success: #34d399;
+    --color-error: #f87171;
+    --bg-success-alpha: rgba(52, 211, 153, 0.1);
+    --bg-error-alpha: rgba(248, 113, 113, 0.1);
+}
+
+/* Estilos del Cuerpo */
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Efectos de luz de fondo */
+body::before {
+    content: '';
+    position: absolute;
+    top: -10%;
+    right: -10%;
+    width: 40%;
+    height: 40%;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.08) 0%, transparent 70%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Contenedor de la Herramienta (Glassmorphism) */
+.tool-container {
+    background: var(--bg-card);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    padding: 2rem;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+/* Áreas de Texto (Textareas) */
+.json-textarea {
+    font-family: 'Fira Code', 'Courier New', Courier, monospace;
+    background-color: rgba(15, 23, 42, 0.6) !important;
+    border: 1px solid var(--border-color) !important;
+    color: #e5e7eb !important;
+    border-radius: 16px;
+    padding: 1.25rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    resize: none;
+    transition: all 0.3s ease;
+}
+
+.json-textarea:focus {
+    border-color: var(--accent-color) !important;
+    box-shadow: 0 0 0 3px var(--shadow-color) !important;
+    outline: none;
+}
+
+.json-textarea::placeholder {
+    color: #4b5563;
+}
+
+/* Botonera de Control */
+.control-btn {
+    border-radius: 12px;
+    padding: 0.65rem 1.25rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-primary-gradient {
+    background: var(--primary-gradient);
+    color: #ffffff;
+    border: none;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+}
+
+.btn-primary-gradient:hover {
+    background: linear-gradient(135deg, #4f46e5, #0891b2);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(99, 102, 241, 0.3);
+}
+
+.btn-outline-custom {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+}
+
+.btn-outline-custom:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-primary);
+    border-color: var(--text-secondary);
+    transform: translateY(-2px);
+}
+
+/* Selector de Indentación */
+.select-custom {
+    background-color: rgba(15, 23, 42, 0.6);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    border-radius: 12px;
+    padding: 0.65rem 2.5rem 0.65rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.select-custom:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px var(--shadow-color);
+    outline: none;
+    color: var(--text-primary);
+}
+
+/* Alertas de Validación */
+.validation-alert {
+    border-radius: 14px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    display: none;
+    align-items: flex-start;
+    gap: 0.75rem;
+    border: 1px solid transparent;
+    animation: slideDown 0.3s ease forwards;
+}
+
+.validation-success {
+    background-color: var(--bg-success-alpha);
+    color: var(--color-success);
+    border-color: rgba(52, 211, 153, 0.2);
+}
+
+.validation-error {
+    background-color: var(--bg-error-alpha);
+    color: var(--color-error);
+    border-color: rgba(248, 113, 113, 0.2);
+}
+
+.validation-alert i {
+    font-size: 1.2rem;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+}
+
+/* Botón de volver atrás */
+.back-link {
+    color: var(--text-secondary);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+    transition: color 0.2s ease, transform 0.2s ease;
+    margin-bottom: 2rem;
+}
+
+.back-link:hover {
+    color: #06b6d4;
+    transform: translateX(-4px);
+}
+
+/* Animaciones */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilos específicos para pantallas medianas/pequeñas */
+@media (max-width: 768px) {
+    .tool-container {
+        padding: 1.25rem;
+    }
+    
+    .json-textarea {
+        height: 250px !important;
+    }
+}

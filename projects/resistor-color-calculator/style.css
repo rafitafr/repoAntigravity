@@ -1,0 +1,332 @@
+/* 
+   ==========================================================================
+   CALCULADORA DE RESISTENCIAS - ESTILOS CSS PERSONALIZADOS (TEMA OSCURO PREMIUM)
+   ==========================================================================
+   Estilos específicos para el diseño visual interactivo de la resistencia
+   y la maquetación de la herramienta de cálculo de colores.
+*/
+
+/* Importación de fuentes tipográficas desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap');
+
+:root {
+    --bg-dark: #0b0f19;
+    --bg-card: rgba(22, 28, 45, 0.4);
+    --border-color: rgba(255, 255, 255, 0.08);
+    --text-primary: #f3f4f6;
+    --text-secondary: #9ca3af;
+    --primary-gradient: linear-gradient(135deg, #6366f1, #06b6d4);
+    --accent-color: #6366f1;
+    --shadow-color: rgba(99, 102, 241, 0.15);
+
+    /* Mapeo de colores físicos para bandas de resistencias */
+    --color-band-black: #000000;
+    --color-band-brown: #8b5a2b;
+    --color-band-red: #ef4444;
+    --color-band-orange: #f97316;
+    --color-band-yellow: #eab308;
+    --color-band-green: #22c55e;
+    --color-band-blue: #3b82f6;
+    --color-band-violet: #a855f7;
+    --color-band-gray: #6b7280;
+    --color-band-white: #ffffff;
+    --color-band-gold: #d4af37;
+    --color-band-silver: #c0c0c0;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Efectos de fondo radiales decorativos */
+body::before {
+    content: '';
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    width: 45%;
+    height: 45%;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.08) 0%, transparent 70%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Enlace de regreso al portafolio */
+.back-link {
+    color: var(--text-secondary);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+    transition: color 0.2s ease, transform 0.2s ease;
+    margin-bottom: 2rem;
+}
+
+.back-link:hover {
+    color: #06b6d4;
+    transform: translateX(-4px);
+}
+
+/* Contenedor Principal de la Herramienta (Glassmorphism) */
+.tool-container {
+    background: var(--bg-card);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    padding: 2.25rem;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+/* Inputs y Selectores de Colores */
+.select-custom {
+    background-color: rgba(15, 23, 42, 0.6) !important;
+    border: 1px solid var(--border-color) !important;
+    color: var(--text-primary) !important;
+    border-radius: 12px;
+    padding: 0.7rem 1rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.select-custom:focus {
+    border-color: var(--accent-color) !important;
+    box-shadow: 0 0 0 3px var(--shadow-color) !important;
+    outline: none;
+}
+
+/* Tarjeta del Resultado Prominente */
+.result-card {
+    background: rgba(15, 23, 42, 0.4);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 1.75rem;
+    text-align: center;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.result-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #06b6d4;
+    margin-bottom: 0.5rem;
+}
+
+.result-value {
+    font-family: 'Fira Code', monospace;
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+    text-shadow: 0 0 10px rgba(99, 102, 241, 0.2);
+}
+
+.result-tolerance {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   REPRESENTACIÓN VISUAL DE LA RESISTENCIA (CSS PURO)
+   ========================================================================== */
+
+.resistor-display-wrapper {
+    background: rgba(15, 23, 42, 0.25);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 3rem 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.resistor-body-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    height: 80px;
+}
+
+/* Patillas metálicas izquierda y derecha */
+.resistor-wire {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 6px;
+    background: linear-gradient(to bottom, #7e8590, #c4cbd4, #545b64);
+    z-index: 1;
+}
+
+.resistor-wire-left {
+    left: 0;
+    width: 20%;
+    border-radius: 3px 0 0 3px;
+}
+
+.resistor-wire-right {
+    right: 0;
+    width: 20%;
+    border-radius: 0 3px 3px 0;
+}
+
+/* Cuerpo físico de la resistencia */
+.resistor-body {
+    position: absolute;
+    left: 18%;
+    width: 64%;
+    height: 60px;
+    background: linear-gradient(to bottom, #e1c095 0%, #c4a173 50%, #9e7f53 100%);
+    border-radius: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3),
+                inset 0 4px 6px rgba(255, 255, 255, 0.2),
+                inset 0 -4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2.5rem;
+}
+
+/* Banda de color */
+.resistor-band {
+    width: 12px;
+    height: 100%;
+    z-index: 3;
+    box-shadow: inset 1px 0 2px rgba(255, 255, 255, 0.1),
+                inset -1px 0 2px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.resistor-band-1 { border-radius: 2px; }
+.resistor-band-2 { border-radius: 2px; }
+.resistor-band-3 { border-radius: 2px; }
+.resistor-band-4 { border-radius: 2px; margin-left: 1.5rem; }
+
+/* Clases dinámicas aplicadas por JavaScript */
+.band-black { background-color: var(--color-band-black); }
+.band-brown { background-color: var(--color-band-brown); }
+.band-red { background-color: var(--color-band-red); }
+.band-orange { background-color: var(--color-band-orange); }
+.band-yellow { background-color: var(--color-band-yellow); }
+.band-green { background-color: var(--color-band-green); }
+.band-blue { background-color: var(--color-band-blue); }
+.band-violet { background-color: var(--color-band-violet); }
+.band-gray { background-color: var(--color-band-gray); }
+.band-white { background-color: var(--color-band-white); }
+.band-gold { background-color: var(--color-band-gold); }
+.band-silver { background-color: var(--color-band-silver); }
+
+/* ==========================================================================
+   SECCIÓN EDUCATIVA Y TABLA
+   ========================================================================== */
+
+.info-section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.info-section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: var(--primary-gradient);
+    border-radius: 3px;
+}
+
+.info-card {
+    background: rgba(22, 28, 45, 0.25);
+    border: 1px solid var(--border-color);
+    border-radius: 18px;
+    padding: 1.5rem;
+}
+
+.table-custom {
+    color: var(--text-primary) !important;
+    background: transparent !important;
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+}
+
+.table-custom th {
+    background-color: rgba(15, 23, 42, 0.6) !important;
+    border-bottom: 2px solid var(--border-color) !important;
+    font-weight: 700;
+    padding: 0.75rem;
+    color: #06b6d4;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+}
+
+.table-custom td {
+    background-color: transparent !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+    padding: 0.65rem 0.75rem;
+    font-size: 0.9rem;
+    vertical-align: middle;
+    color: var(--text-primary) !important;
+}
+
+.color-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+}
+
+.color-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    display: inline-block;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.clear-btn {
+    border-radius: 12px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+/* Responsividad */
+@media (max-width: 576px) {
+    .tool-container {
+        padding: 1.25rem;
+    }
+
+    .resistor-body {
+        padding: 0 1.25rem;
+    }
+
+    .resistor-band-4 {
+        margin-left: 0.5rem;
+    }
+}
