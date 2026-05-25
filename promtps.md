@@ -188,6 +188,38 @@ Se corrigieron los estilos de `.table-custom td` en `projects/resistor-color-cal
 **Acción realizada:**
 Implementación del mini proyecto CSV JSON Converter en HTML, CSS y JS con soporte dinámico para conversiones de CSV a JSON y viceversa, copiado rápido, descarga en local y alerta de errores. Se actualizó `projects.json` con status "done" para habilitar la tarjeta en la página raíz.
 
+## Prompt 8: Actualización del README.md general del repositorio
+**Fecha:** 25 de Mayo de 2026
+**Prompt del Usuario:**
+> Lee la estructura actual del repositorio, el archivo @[c:\Users\nicko\Desktop\curso Antigravity\repoAntigravity\.agents\rules\general-dev.md]  y el archivo @[c:\Users\nicko\Desktop\curso Antigravity\repoAntigravity\projects.json] 
+> 
+> Necesito que completes o actualices el archivo @[c:\Users\nicko\Desktop\curso Antigravity\repoAntigravity\README.md] 
+> 
+> El README debe describir claramente el propósito del repositorio: un portfolio de mini herramientas web desarrolladas con HTML, CSS, JavaScript y JSON, publicable en GitHub Pages.
+> 
+> Incluye estas secciones:
+> 
+> 1. Título del proyecto.
+> 2. Descripción general.
+> 3. Tecnologías utilizadas.
+> 4. Estructura del repositorio.
+> 5. Listado de mini proyectos leyendo la información existente en projects.json.
+> 6. Cómo añadir nuevos mini proyectos.
+> 7. Estado actual del proyecto.
+> 8. Posibles mejoras futuras.
+> 
+> Condiciones:
+> - No inventes mini proyectos que no estén en projects.json.
+> - No modifiques los mini proyectos existentes.
+> - No modifiques index.html, CSS ni JavaScript.
+> - Solo actualiza README.md.
+> - Usa un tono profesional, claro y conciso.
+> - El README debe estar en español.
+
+**Acción realizada:**
+Se rellenó y estructuró completamente el archivo `README.md` de la raíz del repositorio siguiendo los 8 apartados requeridos. Se leyeron dinámicamente los 7 proyectos actuales (4 completados, 3 planificados) registrados en `projects.json` y se describieron bajo la firma oficial de autoría de Rafael Fernández Rodríguez.
+
+
 
 
 

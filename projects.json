@@ -57,6 +57,51 @@
                 "converter",
                 "developer-tool"
             ]
+        },
+        {
+            "id": "password-generator",
+            "title": "Generador de contraseñas seguras",
+            "description": "Herramienta para generar contraseñas seguras configurando longitud, mayúsculas, minúsculas, números y símbolos.",
+            "category": "Seguridad",
+            "path": "projects/password-generator/",
+            "liveUrl": "projects/password-generator/",
+            "status": "planned",
+            "tags": [
+                "password",
+                "security",
+                "generator",
+                "javascript"
+            ]
+        },
+        {
+            "id": "color-palette-generator",
+            "title": "Generador de paletas de colores",
+            "description": "Herramienta para generar paletas de colores, copiar códigos HEX y guardar combinaciones favoritas.",
+            "category": "Diseño",
+            "path": "projects/color-palette-generator/",
+            "liveUrl": "projects/color-palette-generator/",
+            "status": "planned",
+            "tags": [
+                "colors",
+                "palette",
+                "hex",
+                "design"
+            ]
+        },
+        {
+            "id": "dni-nie-validator",
+            "title": "Validador de DNI/NIE",
+            "description": "Herramienta para validar, normalizar y comprobar la letra de documentos DNI y NIE españoles.",
+            "category": "Validadores",
+            "path": "projects/dni-nie-validator/",
+            "liveUrl": "projects/dni-nie-validator/",
+            "status": "planned",
+            "tags": [
+                "dni",
+                "nie",
+                "validator",
+                "spain"
+            ]
         }
     ]
 }
